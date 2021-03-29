@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        li {
+            border: 1px solid black;
+            margin: 4px;
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <ol id="list" contenteditable="true">
+        <li>element 1</li>
+        <li>element 2</li>
+        <li>element 3</li>
+    </ol>
+    <script type="text/javascript">
+        const list = document.getElementById("list");
+        list.addEventListener("input", () => {
+            if (list.children.length === 0) {
+                const newElement = document.createElement("li");
+                list.appendChild(newElement);
+            }
+        })
+    </script>
+</body>
+
+</html>
